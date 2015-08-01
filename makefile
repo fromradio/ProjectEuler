@@ -30,3 +30,39 @@ bin/primefac: obj/primefac.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/primefac.o: src/prime_factor.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+palin: bin/palin
+bin/palin: obj/palin.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/palin.o: src/largest_palindrome.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+multiple: bin/multiple
+bin/multiple: obj/multiple.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/multiple.o: src/smallest_multiple.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+sumdiff: bin/sumdiff
+bin/sumdiff: obj/sumdiff.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/sumdiff.o: src/sum_square_difference.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+10001prime: bin/10001prime
+bin/10001prime: obj/10001prime.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/10001prime.o: src/10001st_prime.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+lproduct: bin/lproduct
+bin/lproduct: obj/lproduct.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/lproduct.o: src/largest_product.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+sumprime: bin/sumprime
+bin/sumprime: obj/sumprime.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/sumprime.o: src/sum_of_prime.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
