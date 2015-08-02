@@ -95,3 +95,9 @@ bin/pdigit: obj/pdigit.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/pdigit.o: src/power_digit.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+pathsum: bin/pathsum
+bin/pathsum: obj/pathsum.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/pathsum.o: src/path_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
