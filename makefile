@@ -61,8 +61,37 @@ bin/lproduct: obj/lproduct.o
 obj/lproduct.o: src/largest_product.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 10
 sumprime: bin/sumprime
 bin/sumprime: obj/sumprime.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/sumprime.o: src/sum_of_prime.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+#12
+tri: bin/tri
+bin/tri: obj/tri.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/tri.o: src/triangle_number.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+#13
+largesum: bin/largesum
+bin/largesum: obj/largesum.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/largesum.o: src/large_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+#14
+lcollatz: bin/lcollatz
+bin/lcollatz: obj/lcollatz.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/lcollatz.o: src/longest_collatz.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+#16
+pdigit: bin/pdigit
+bin/pdigit: obj/pdigit.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/pdigit.o: src/power_digit.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
