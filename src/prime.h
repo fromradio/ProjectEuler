@@ -1,18 +1,21 @@
+#ifndef PRIME_H__
+#define PRIME_H__
 #include <list>
 #include <vector>
 #include <set>
 
-std::set<long> primeList(long num)
+template<class Ind>
+std::set<Ind> primeList(Ind num)
 {
 	std::vector<bool> cons(num+1,true);
-	long p = 2;
+	Ind p = 2;
 	while(p*p<=num)
 	{
-		for(long k = p*p; k<= num; k+=p)
+		for(Ind k = p*p; k<= num; k+=p)
 		{
 			cons[k] = false;
 		}
-		for(long i = p+1; i < num; ++ i)
+		for(Ind i = p+1; i < num; ++ i)
 		{
 			if(cons[i]){
 				p = i;
@@ -20,9 +23,11 @@ std::set<long> primeList(long num)
 			}
 		}
 	}
-	std::set<long> l;
-	for (long i = 2; i <= num; ++i)
+	std::set<Ind> l;
+	for (Ind i = 2; i <= num; ++i)
 		if(cons[i])
 			l.insert(i);
 	return l;
 }
+
+#endif

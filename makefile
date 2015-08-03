@@ -123,3 +123,17 @@ bin/quadprime: obj/quadprime.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/quadprime.o: src/quadratic_prime.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 37
+truncprime: bin/truncprime
+bin/truncprime: obj/truncprime.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/truncprime.o: src/trunc_prime.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 39
+inttri: bin/inttri
+bin/inttri: obj/inttri.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/inttri.o: src/inter_triangle.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
