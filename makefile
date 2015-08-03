@@ -96,8 +96,30 @@ bin/pdigit: obj/pdigit.o
 obj/pdigit.o: src/power_digit.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 67
 pathsum: bin/pathsum
 bin/pathsum: obj/pathsum.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/pathsum.o: src/path_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 25
+fabnum: bin/fabnum
+bin/fabnum: obj/fabnum.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/fabnum.o: src/fab_number.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 31
+coinsum: bin/coinsum
+bin/coinsum: obj/coinsum.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/coinsum.o: src/coin_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 27
+quadprime: bin/quadprime
+bin/quadprime: obj/quadprime.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/quadprime.o: src/quadratic_prime.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
