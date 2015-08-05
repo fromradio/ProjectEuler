@@ -139,3 +139,10 @@ bin/inttri: obj/inttri.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/inttri.o: $(src50)/inter_triangle.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 34
+digitfac: bin/digitfac
+bin/digitfac: obj/digitfac.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/digitfac.o: $(src50)/digit_factorials.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
