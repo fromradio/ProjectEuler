@@ -146,3 +146,24 @@ bin/digitfac: obj/digitfac.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/digitfac.o: $(src50)/digit_factorials.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 45
+tph: bin/tph
+bin/tph: obj/tph.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/tph.o: $(src50)/tri_pen_hex.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 47
+disfac: bin/disfac
+bin/disfac: obj/disfac.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/disfac.o: $(src50)/dis_prime_factor.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 47
+subdiv: bin/subdiv
+bin/subdiv: obj/subdiv.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/subdiv.o: $(src50)/sub_string_div.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
