@@ -15,6 +15,8 @@ DIR_BIN = ./bin
 
 src50 = src/1-50
 
+src100 = src/51-100
+
 multipliers: bin/multipliers
 bin/multipliers: obj/multipliers.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
@@ -161,9 +163,23 @@ bin/disfac: obj/disfac.o
 obj/disfac.o: $(src50)/dis_prime_factor.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
-# 47
+# 43
 subdiv: bin/subdiv
 bin/subdiv: obj/subdiv.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/subdiv.o: $(src50)/sub_string_div.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 50
+consprime: bin/consprime
+bin/consprime: obj/consprime.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/consprime.o: $(src50)/cons_prime_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 50
+sqrtcon: bin/sqrtcon
+bin/sqrtcon: obj/sqrtcon.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/sqrtcon.o: $(src100)/square_root_convergent.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
