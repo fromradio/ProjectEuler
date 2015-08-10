@@ -15,7 +15,6 @@ int main(int argc, char*argv[])
 		{
 			if(((1+k1)%6)==0&&((1+k2)%4)==0)
 			{
-				long kk = (1+k2)/2;
 				std::cout<<n-1<<' '<<k<<std::endl;
 				break;
 			}

@@ -60,6 +60,17 @@ public:
 			ns.emplace_back(1);
 		return largeNumber(ns);
 	}
+	largeNumber operator*( const largeNumber& ln) const
+	{
+		/**  multiplication of two largeNumbers 
+		  *  	(a*1e9+b)(c*1e9+d) = (a*c*1e18 + b*c*1e9 + a*d*1e9 + b*d)
+		  */
+
+	}
+	largeNumber mul(long long n1, long long n2)
+	{
+		
+	}
 	largeNumber& operator=(const largeNumber& ln)
 	{
 		__nums = ln.numbers();
