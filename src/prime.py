@@ -25,10 +25,11 @@ def primeList(num):
 
 # problem 60
 
-def pairSet():
+def primePairs( pn ):
 	# 3 and 7 must be two of the 5 numbers
-	pl = primeList(5000)
-	num = 5000*5000
+	# pn = 1000
+	pl = primeList(pn)
+	num = pn * pn
 	bpl = primeList(num)
 	# judge two prime numbers are pair
 	def jp(p1,p2):
@@ -39,12 +40,17 @@ def pairSet():
 		else:
 			return True
 	# find all numbers be pair of 3 and 7
-	l = []
+	l = {}
 	for p in pl:
-		if jp(p,3) and jp(p,7):
-			l.append(p)
-	for n in l:
-		for m in l:
-			if jp(m,n):
-				print m,n
+		lp = []
+		for pt in pl:
+			if jp(pt,p):
+				lp.append(pt)
+		l[p] = lp
+	# 	if jp(p,3) and jp(p,7):
+	# 		l.append(p)
+	# for n in l:
+	# 	for m in l:
+	# 		if jp(m,n):
+	# 			print m,n
 	print l
