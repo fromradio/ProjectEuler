@@ -71,6 +71,7 @@ int trinum(const Factor& fac,int n)
 	return ts.size();
 }
 
+
 /** answer is 84 with 8 triangles */
 int main(int argc, char *argv[])
 {
