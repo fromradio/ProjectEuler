@@ -17,48 +17,56 @@ src50 = src/1-50
 
 src100 = src/51-100
 
+# 1
 multipliers: bin/multipliers
 bin/multipliers: obj/multipliers.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/multipliers.o: $(src50)/multipliers_three_and_five.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 2
 evenfib: bin/evenfib
 bin/evenfib: obj/evenfib.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/evenfib.o: $(src50)/even_fibonacci.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 3
 primefac: bin/primefac
 bin/primefac: obj/primefac.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/primefac.o: $(src50)/prime_factor.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 4
 palin: bin/palin
 bin/palin: obj/palin.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/palin.o: $(src50)/largest_palindrome.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 5
 multiple: bin/multiple
 bin/multiple: obj/multiple.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/multiple.o: $(src50)/smallest_multiple.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 6
 sumdiff: bin/sumdiff
 bin/sumdiff: obj/sumdiff.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/sumdiff.o: $(src50)/sum_square_difference.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 7
 10001prime: bin/10001prime
 bin/10001prime: obj/10001prime.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/10001prime.o: $(src50)/10001st_prime.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 8
 lproduct: bin/lproduct
 bin/lproduct: obj/lproduct.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
@@ -149,6 +157,13 @@ bin/digitfac: obj/digitfac.o
 obj/digitfac.o: $(src50)/digit_factorials.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 36
+doublepali: bin/doublepali
+bin/doublepali: obj/doublepali.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/doublepali.o: $(src50)/double_palindrome_36.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
 # 45
 tph: bin/tph
 bin/tph: obj/tph.o
@@ -177,9 +192,30 @@ bin/consprime: obj/consprime.o
 obj/consprime.o: $(src50)/cons_prime_sum.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
-# 50
+# 57
 sqrtcon: bin/sqrtcon
 bin/sqrtcon: obj/sqrtcon.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/sqrtcon.o: $(src100)/square_root_convergent.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 60
+primepair: bin/primepair
+bin/primepair: obj/primepair.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/primepair.o: $(src100)/prime_pair.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 75
+singtri: bin/singtri
+bin/singtri: obj/singtri.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/singtri.o: $(src100)/sing_int_tri.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 75
+pathsum2: bin/pathsum2
+bin/pathsum2: obj/pathsum2.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/pathsum2.o: $(src100)/path_sum.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
