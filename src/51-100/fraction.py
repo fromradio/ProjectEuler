@@ -79,4 +79,4 @@ def orderFraction(n):
 			numer = ub
 			de = d
 	return numer,de
-print orderFraction(1000000)
+print orderFraction(1000000) 
