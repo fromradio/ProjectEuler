@@ -79,4 +79,16 @@ def orderFraction(n):
 			numer = ub
 			de = d
 	return numer,de
-print orderFraction(1000000) 
+# print orderFraction(1000000) 
+
+def rangeFraction(n):
+	count = 0
+	for d in range(4,n+1):
+		ub = d/2
+		while ub*3>d:
+			if gcd(ub,d) == 1:
+				count += 1
+			ub -= 1
+	return count
+
+print rangeFraction(12000)
