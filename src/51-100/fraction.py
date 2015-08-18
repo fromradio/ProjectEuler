@@ -91,4 +91,20 @@ def rangeFraction(n):
 			ub -= 1
 	return count
 
-print rangeFraction(12000)
+# print rangeFraction(12000)
+
+def countFraction(n):
+	primes = primeList(int(math.sqrt(n))+1)
+	cm = [[] for i in range(0,n+1)]
+	for p in primes:
+		print p
+		l = []
+		for i in range(p,n+1,p):
+			cm[i].extend(l)
+			l.append(i)
+	count = 0
+	for i in range(2,n+1):
+		count += i-1-len(set(cm[i]))
+	return count
+
+print countFraction(1000000)
