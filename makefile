@@ -101,6 +101,13 @@ bin/lcollatz: obj/lcollatz.o
 obj/lcollatz.o: $(src50)/longest_collatz.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+#14
+lattice: bin/lattice
+bin/lattice: obj/lattice.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/lattice.o: $(src50)/lattice_path.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
 #16
 pdigit: bin/pdigit
 bin/pdigit: obj/pdigit.o
@@ -199,11 +206,25 @@ bin/sqrtcon: obj/sqrtcon.o
 obj/sqrtcon.o: $(src100)/square_root_convergent.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
+# 57
+spprime: bin/spprime
+bin/spprime: obj/spprime.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/spprime.o: $(src100)/spiral_prime_58.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
 # 60
 primepair: bin/primepair
 bin/primepair: obj/primepair.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/primepair.o: $(src100)/prime_pair.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 72
+frac: bin/frac
+bin/frac: obj/frac.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/frac.o: $(src100)/fraction_72.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
 # 75
