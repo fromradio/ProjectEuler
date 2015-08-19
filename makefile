@@ -239,4 +239,11 @@ pathsum2: bin/pathsum2
 bin/pathsum2: obj/pathsum2.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/pathsum2.o: $(src100)/path_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@\
+
+# 94
+aleqtri: bin/aleqtri
+bin/aleqtri: obj/aleqtri.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/aleqtri.o: $(src100)/almost_eq_tri.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@

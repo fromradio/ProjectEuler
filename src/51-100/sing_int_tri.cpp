@@ -73,7 +73,10 @@ Ind gcd(Ind a, Ind b)
         b = temp;
     }
     return a;
-}/** 快速求解：
+}
+
+
+/** 快速求解：
   * 	利用Euclid's formula，所有三元组可以表示为m*m-n*n,
   * 2*m*n, m*m+n*n 或者这个的倍数，其中m, n互素。
   */
