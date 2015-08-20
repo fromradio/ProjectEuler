@@ -34,7 +34,6 @@ std::set<Ind> primeList(Ind num)
 template<class Ind>
 using Factor = std::map<Ind,int>;
 
-// #include <iostream>
 template<class Ind>
 Factor<Ind> factor(Ind n, const std::set<Ind>& primes)
 {
@@ -51,15 +50,53 @@ Factor<Ind> factor(Ind n, const std::set<Ind>& primes)
 				else
 					f[*iter] += 1;
 				impl(r/(*iter),f);
-				break;
+				return ;
 			}
 		}
+		f[r] = 1;
 	};
 	Factor<Ind> fac;
 	impl(n,fac);
 	return fac;
 }
 
+/** get the divisors */
+template<class Ind>
+using Divisors = std::set<Ind>;
 
+template<class Ind>
+Divisors<Ind> division(Ind n, const std::set<Ind>& primes)
+{
+	auto f = factor(n,primes);
+	std::function<void(Ind,typename Factor<Ind>::iterator,Divisors<Ind>&)> impl = [n,&f,primes,&impl](Ind l,typename Factor<Ind>::iterator iter,Divisors<Ind>& divs)
+	{
+		if (iter==f.end())
+		{
+			if (l!=n)
+				divs.insert(l);
+		}
+		else
+		{
+			Ind r = 1;
+			for(int i = 0 ; i <= iter->second ; ++ i)
+			{
+				auto it = iter;
+				++ it;
+				impl(l*r,it,divs);
+				r *= iter->first;
+			}
+		}
+	};
+	Divisors<Ind> result;
+	impl(1,f.begin(),result);
+	return result;
+}
 
+template<class Ind>
+Ind divSummation(const Divisors<Ind>& divs)
+{
+	Ind sum = 0;
+	std::for_each(divs.begin(),divs.end(),[&sum](auto i){sum += i;});
+	return sum;
+}
 #endif

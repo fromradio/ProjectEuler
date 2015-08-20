@@ -247,3 +247,10 @@ bin/aleqtri: obj/aleqtri.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/aleqtri.o: $(src100)/almost_eq_tri.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 95
+amichain: bin/amichain
+bin/amichain: obj/amichain.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/amichain.o: $(src100)/ami_chains.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
