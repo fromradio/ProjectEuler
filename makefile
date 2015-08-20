@@ -239,7 +239,14 @@ pathsum2: bin/pathsum2
 bin/pathsum2: obj/pathsum2.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/pathsum2.o: $(src100)/path_sum.cpp
-	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@\
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 77
+primesum: bin/primesum
+bin/primesum: obj/primesum.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/primesum.o: $(src100)/prime_sum.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
 
 # 94
 aleqtri: bin/aleqtri
