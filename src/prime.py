@@ -36,7 +36,7 @@ def factor(n,primes):
 		dic[n] += 1
 		return dic
 	return impl(n,{})
-	
+
 # problem 60
 
 def primePairs( pn ):
@@ -61,10 +61,10 @@ def primePairs( pn ):
 			if jp(pt,p):
 				lp.append(pt)
 		l[p] = lp
-	# 	if jp(p,3) and jp(p,7):
-	# 		l.append(p)
-	# for n in l:
-	# 	for m in l:
-	# 		if jp(m,n):
-	# 			print m,n
 	print l
+
+def main():
+	pass
+
+if __name__ == '__main__':
+	main()

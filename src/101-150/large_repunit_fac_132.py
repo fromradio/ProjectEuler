@@ -28,36 +28,85 @@ def primeList(num):
 			l.append(i)
 	return l
 
-primes = primeList(1000000)
-# print largePowerMod(1000,1000,10000000000)
-# r = 0
-# print largePowerMod(2,2,3)
-# # problem 48
-# for i in range(1,1001):
-# 	r += largePowerMod(i,i,10000000000)
-# print r
-# print r%10000000000
 
-n = int(1e9)
-count = 0
-s = 0
-def gcd(m,n):
-	if n==0:
-		return m
-	else:
-		return gcd(n,m%n)
 
-print gcd(15,20)
-for p in primes:
-	if p==2 or p==3 or p==5:
-		continue
-	g = gcd(n,p-1)
-	if g != 0:
-		if largePowerMod(10,g,p)==1:
-			s += p
-			count += 1
-			print p,g,largePowerMod(10,g,p)
-	if count >= 40:
-		break
-print s
-print count
+# solution for problem 48:
+def Problem48():
+	r = 0
+	# problem 48
+	for i in range(1,1001):
+		r += largePowerMod(i,i,10000000000)
+	print r
+	print r%10000000000
+
+def Problem132():
+	primes = primeList(1000000)
+	n = int(1e9)
+	count = 0
+	s = 0
+	def gcd(m,n):
+		if n==0:
+			return m
+		else:
+			return gcd(n,m%n)
+
+	print gcd(15,20)
+	for p in primes:
+		if p==2 or p==3 or p==5:
+			continue
+		g = gcd(n,p-1)
+		if g != 0:
+			if largePowerMod(10,g,p)==1:
+				s += p
+				count += 1
+				print p,g,largePowerMod(10,g,p)
+		if count >= 40:
+			break
+	print s
+	print count
+
+def Problem133():
+	primes = primeList(100000)
+	primes.remove(3)
+	summation = 0
+	for p in primes:
+		l = p-1
+		# only 2 and 5 are factors
+		fac2 = 0
+		div = 2
+		while 1:
+			if l%div == 0:
+				fac2 += 1
+				div *= 2
+			else:
+				break
+		fac5 = 0
+		div = 5
+		while 1:
+			if l%div == 0:
+				fac5 += 1
+				div *= 5
+			else:
+				break
+		if fac2==0 and fac5==0:
+			continue
+		else:
+			found = False
+			for i in range(0,fac2+1):
+				for j in range(0,fac5+1):
+					r = (2**i)*(5**j)
+					if largePowerMod(10,r,p)==1:
+						# print p
+						found = True
+						summation += p
+						break
+					pass
+				if found:
+					break
+	print sum(primes)-summation+3
+
+def main():
+	Problem133()
+
+if __name__ == '__main__':
+	main()
