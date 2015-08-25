@@ -1,5 +1,3 @@
-import operator
-
 def primeList(num):
 	# 
 	cons = [True for i in range(0,int(num)+1)]
@@ -37,34 +35,15 @@ def factor(n,primes):
 		return dic
 	return impl(n,{})
 
-# problem 60
+primes = primeList(1000)
 
-def primePairs( pn ):
-	# 3 and 7 must be two of the 5 numbers
-	# pn = 1000
-	pl = primeList(pn)
-	num = pn * pn
-	bpl = primeList(num)
-	# judge two prime numbers are pair
-	def jp(p1,p2):
-		if int(str(p1)+str(p2)) not in bpl:
-			return False
-		if int(str(p2)+str(p1)) not in bpl:
-			return False
-		else:
-			return True
-	# find all numbers be pair of 3 and 7
-	l = {}
-	for p in pl:
-		lp = []
-		for pt in pl:
-			if jp(pt,p):
-				lp.append(pt)
-		l[p] = lp
-	print l
-
-def main():
-	pass
-
-if __name__ == '__main__':
-	main()
+print factor(50,primes)
+for i in range(3,1000000):
+	f = factor(i,primes)
+	s = 1
+	for p in f:
+		s*=(2*f[p]+1)
+	# print s
+	if (s/2+1) > 1000:
+		print i
+		break

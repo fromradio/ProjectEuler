@@ -17,6 +17,8 @@ src50 = src/1-50
 
 src100 = src/51-100
 
+src150 = src/101-150
+
 # 1
 multipliers: bin/multipliers
 bin/multipliers: obj/multipliers.o
@@ -260,4 +262,11 @@ amichain: bin/amichain
 bin/amichain: obj/amichain.o
 	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
 obj/amichain.o: $(src100)/ami_chains.cpp
+	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
+
+# 102
+optpoly: bin/optpoly
+bin/optpoly: obj/optpoly.o
+	$(CXX) $< $(DIR_LIB) -o $@ $(LIB)
+obj/optpoly.o: $(src150)/opt_poly.cpp
 	$(CXX) $(CXXFLAGS) $(DIR_INC) -c $< -o $@
