@@ -29,7 +29,6 @@ def PrimAlgo(mat):
 			curr = curr[1]
 			Q.remove(curr)
 			F.setdefault(curr,E[curr])
-		print Q
 		for i in range(0,n):
 			if mat[curr][i]<float('inf'):
 				if C[i] > mat[curr][i] and i in Q:
@@ -49,7 +48,6 @@ def main():
 		if m[i] != 'f':
 			k += m[i][1]
 	print k,s-k
-	print m
 
 if __name__ == '__main__':
 	main()

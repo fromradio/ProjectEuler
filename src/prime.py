@@ -23,6 +23,20 @@ def primeList(num):
 			l.append(i)
 	return l
 
+def factor(n,primes):
+	def impl(n,dic):
+		if n == 1:
+			return dic
+		for p in primes:
+			if n%p == 0:
+				dic.setdefault(p,0)
+				dic[p] += 1
+				return impl(n/p,dic)
+		dic.setdefault(n,1)
+		dic[n] += 1
+		return dic
+	return impl(n,{})
+	
 # problem 60
 
 def primePairs( pn ):
