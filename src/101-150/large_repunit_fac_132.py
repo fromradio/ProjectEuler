@@ -105,8 +105,18 @@ def Problem133():
 					break
 	print sum(primes)-summation+3
 
+
+def Problem129():
+	# 10^n=1(mod 9p)
+	primes = set(primeList(int(1e6)))
+	primes.remove(2)
+	primes.remove(5)
+	primes.remove(7)
+	for p in primes:
+		pass
+	pass
 def main():
-	Problem133()
+	Problem129()
 
 if __name__ == '__main__':
 	main()

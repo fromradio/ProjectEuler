@@ -1,3 +1,6 @@
+#ifndef STATS_H__
+#define STATS_H__
+
 #include <chrono>
 
 class TimeStats
@@ -23,3 +26,5 @@ public:
 		return std::chrono::duration_cast<std::chrono::milliseconds>(__end-__start).count();
 	}
 };
+
+#endif
